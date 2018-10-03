@@ -106,7 +106,6 @@ namespace Kentor.OwinCookieSaver.Tests
             cookie.Expires.Should().Be(expectedExpires);
             cookie.Secure.Should().BeTrue("cookie string contains Secure");
             cookie.HttpOnly.Should().BeTrue("cookie string contains HttpOnly");
-            cookie.IsFromHeader().Should().BeTrue();
         }
 
         [TestMethod]
