@@ -20,9 +20,11 @@ namespace Kentor.OwinCookieSaver.Tests
             var result = CookieParser.Parse(cookieHeader).Single();
 
             var expected = new HttpCookie("Name", "Value")
-                {
-                    Path = null
-                };
+            {
+                Path = null,
+                HttpOnly = false,
+                Secure = false
+            };
 
             result.ShouldBeEquivalentTo(expected);
         }
