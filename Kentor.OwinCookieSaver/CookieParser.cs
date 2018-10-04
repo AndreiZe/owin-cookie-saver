@@ -21,7 +21,11 @@ namespace Kentor.OwinCookieSaver
                 HttpCookie cookie = new HttpCookie(nameAndValue.Key, nameAndValue.Value)
                 {
                     // Path defaults to /, want to be able to roundtrip non-existing field.
-                    Path = null
+                    Path = null,
+                    // HttpOnly defaults to true so set it to false explicitly
+                    HttpOnly = false,
+                    // Secure defaults to true so set it to false explicitly
+                    Secure = false
                 };
 
                 // First key-value-pair is cookie name and value, now look at the rest.
